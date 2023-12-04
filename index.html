@@ -1,0 +1,780 @@
+<!DOCTYPE html><html><head><title>Spot MGWCMX Edition</title><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui=1"><meta charset="UTF-8"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="description" content=""><link rel="manifest" href="manifest.json"><link rel="icon" type="image/png" href="icon64.png"><link rel="apple-touch-icon" sizes="180x180" href="icon180.png"><link rel="icon" type="image/png" sizes="32x32" href="icon32.png"><link rel="icon" type="image/png" sizes="16x16" href="icon16.png"><style>html,body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow:hidden;
+  font-family: Verdana;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#canvaswrapper {
+  text-align: center ;
+}
+</style><style>@font-face { font-family: "BitCell" ; src: url("fonts/BitCell.ttf") format("truetype"); }</style><script>window.fonts = ["BitCell"]</script></head><body class="noselect custom-cursor" oncontextmenu="return false;"><div id="canvaswrapper"></div><script type="text/javascript">var resources = {"images":[{"file":"0.png","version":1,"size":56772,"properties":{}},{"file":"heart.png","version":19,"size":270,"properties":{"frames":1,"fps":5}},{"file":"icon.png","version":8,"size":160685,"properties":{"frames":1,"fps":5}},{"file":"mappa.png","version":1,"size":26425,"properties":{}},{"file":"maptiles-build1.png","version":2,"size":100,"properties":{"frames":1,"fps":5}},{"file":"maptiles-floor.png","version":3,"size":100,"properties":{"frames":1,"fps":5}},{"file":"maptiles-sprite.png","version":1,"size":115,"properties":{"frames":1,"fps":5}},{"file":"mgwcmx.png","version":1,"size":151470,"properties":{}},{"file":"o_off.png","version":1,"size":203720,"properties":{}},{"file":"o_on.png","version":1,"size":569688,"properties":{}},{"file":"p.png","version":1,"size":59401,"properties":{}},{"file":"players-player1.png","version":31,"size":181,"properties":{"frames":1,"fps":5}},{"file":"players-player2.png","version":24,"size":183,"properties":{"frames":1,"fps":5}},{"file":"s.png","version":1,"size":56874,"properties":{}},{"file":"skins-sprite.png","version":1,"size":101,"properties":{"frames":1,"fps":5}},{"file":"t.png","version":1,"size":48177,"properties":{}}],"assets":[],"maps":{"map":"{\"width\":50,\"height\":50,\"block_width\":16,\"block_height\":16,\"sprites\":[0,\"maptiles-floor\",\"icon\"],\"data\":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,2,1,1,1,1,2,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,2,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]}","map2":"{\"width\":50,\"height\":50,\"block_width\":16,\"block_height\":16,\"sprites\":[0,\"maptiles-floor\",\"maptiles-build1\"],\"data\":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,1,2,2,2,1,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,1,1,1,2,2,2,2,2,2,2,2,2,2,1,1,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,1,2,2,2,1,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,1,1,1,2,2,2,2,2,2,2,2,2,2,1,1,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,1,2,2,2,1,2,2,2,2,2,1,1,1,1,1,1,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,1,1,2,2,1,1,1,1,1,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,1,1,2,2,1,1,1,1,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,1,1,2,2,1,1,1,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,1,1,2,2,1,1,1,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,1,1,1,1,1,1,1,1,1,2,2,1,1,2,2,1,1,1,1,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,1,1,1,1,1,1,1,1,1,2,2,1,1,2,2,1,1,1,1,1,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]}"},"sounds":[{"file":"hit.wav","version":1,"size":45580,"properties":{}},{"file":"light_on.wav","version":1,"size":512470,"properties":{}}],"music":[]};
+var graphics = "M1";
+
+</script><script type="text/javascript">var orientation = 'landscape' ;
+var aspect = '>16x9' ;
+var ms_libs = [] ;
+window.skip_service_worker = true;
+window.exported_project = true;
+window.ms_use_server = false ;
+</script><script src="compiler.js"></script><script src="parser.js"></script><script src="processor.js"></script><script src="program.js"></script><script src="routine.js"></script><script src="runner.js"></script><script src="token.js"></script><script src="tokenizer.js"></script><script src="transpiler.js"></script><script src="microengine.js"></script></body><script type="text/javascript">//
+//
+// The game is started with the code below.
+// Once you have received the "started" signal (see below),
+// you can do the following:
+// 1) Inject functions or objects into the global context of the microStudio engine, example:
+//
+//   window.player.setGlobal("special_callback",function(x) { console.info(x) }) ;
+//   // Your microScript code can now call the "special_callback" function
+//
+// 2) Call microScript global functions from your JavaScript code, example:
+//
+//   window.player.call("call_me_from_javascript",[10,1000]) ;
+//   // arguments to the function call are provided as an array
+//
+// 3) Run a microScript code snippet from your JavaScript code, example:
+//
+//   window.player.exec("player.position_x = 50",function(result) { console.log(result) ; }) ;
+//
+
+window.addEventListener("load",function() {
+  window.player = new Player(function(event) {
+    if (event.name == "started") {
+      // signal that the game is started
+    }
+    else if (event.name == "log") {
+      // console.info(event.data) ;
+    }
+  }) ;
+  document.body.focus() ;
+}) ;
+
+</script><script id="code" type="text/x-microscript">
+
+
+function()
+// takes an angle in degrees and returns a vector in the form of a list [x, y]
+// the elements [x, y] of this direction vector can then be multiplied by a
+// certain speed (in pixels per frame) to move an entity on the screen
+angleToVector = function(angle)
+  return [cosd(angle), sind(angle)]
+end
+
+// discover the name of the sprite portion at an (x, y) position in the world
+// NOTE: the draw width/height is not the width of the map, but how width/high
+// you draw it in the game
+checkCollision = function(x, y, map_name, map_draw_width, map_draw_height)
+  local grid_x = floor((x + map_draw_width / 2) / (map_draw_width / maps[map_name].width))
+  local grid_y = floor((y + map_draw_height / 2) / (map_draw_height / maps[map_name].height))
+  return maps[map_name].get(grid_x, grid_y)
+end
+
+// checks to see if the mouse is touching/hovering over a rectangle
+// useful for detecting hover/click on buttons
+checkRectMouseHover = function(x, y, width, height)
+  local hover = true
+  if mouse.x < (x - width/2) then hover = false end
+  if mouse.x > (x + width/2) then hover = false end
+  if mouse.y < (y - height/2) then hover = false end
+  if mouse.y > (y + height/2) then hover = false end
+  return hover
+end
+
+// returns a random item from a list
+choose = function(lst)
+  local index = random.nextInt(lst.length)
+  return lst[index]
+end
+
+// keep a value within a set range
+// useful for keeping a player on the screen etc.
+// NOTE: returns the new value, does not automatically change it
+clamp = function(value, lower_limit, upper_limit)
+  local val = max(value, lower_limit)
+  val = min(val, upper_limit)
+  return val
+end
+
+// takes screen co-ordinates (not map coord) and replaces the map square with a blank
+// useful for removing items from the map when collecting gems etc.
+deleteMapItem = function(x, y, map_name, map_draw_width, map_draw_height)
+  local grid_x = floor((x + map_draw_width / 2) / (map_draw_width / maps[map_name].width))
+  local grid_y = floor((y + map_draw_height / 2) / (map_draw_height / maps[map_name].height))
+  maps[map_name].set(grid_x, grid_y, " ")
+end
+
+// takes screen co-ordinates (not map coord) and replaces the map square with a blank
+// useful for removing items from the map when collecting gems etc.
+deleteMapItem = function(x, y, map, map_draw_width, map_draw_height)
+  local grid_x = floor((x + map_draw_width / 2) / (map_draw_width / maps[map].width))
+  local grid_y = floor((y + map_draw_height / 2) / (map_draw_height / maps[map].height))
+  maps[map].set(grid_x, grid_y, " ")
+end
+
+// find the distance between object 1 and object 2
+// useful for a simple circular collision detection
+distance = function(x1, y1, x2, y2)
+  local a = x2 - x1
+  local b = y2 - y1
+  local c = sqrt(pow(a, 2) + pow(b, 2))
+  return c
+end
+
+// returns a number that moves smoothly between .4 and 1
+// useful for flashing text if used to set the alpha each frame
+getFlashValue = function(seconds_per_flash = 1.5)
+  return pow(cos(system.time()/1000*PI/seconds_per_flash), 2) * 0.6 + .4
+end
+
+// finds the angle in degrees from point 1 to point 2
+getAngle = function(x1, y1, x2, y2)
+  return atan2d(y2 - y1, x2 - x1)
+end
+
+// returns a number that moves smoothly between .4 and 1
+// very useful for flashing text if used to set the alpha each frame
+getFlashValue = function(seconds_per_flash = 1.5)
+  return pow(cos(system.time()/1000*PI/seconds_per_flash), 2) * 0.6 + .4
+end
+
+// slowly transition a variable to value for smooth tween effects
+moveToward = function(current_value, target, amount)
+  local new_value = 0
+  if current_value == target then
+    new_value = current_value
+  elsif current_value < target then
+    new_value = current_value + amount
+    if new_value > target then new_value = target end
+  elsif current_value > target then
+    new_value = current_value - amount
+    if new_value < target then new_value = target end  
+  end
+  return new_value
+end
+
+// sets the length of a movement vector to 1, making it a direction vector
+// useful for directions as it can then be multiplied by an object's speed
+normalize = function(vector)
+  local x = vector[0]
+  local y = vector[1]
+  local v = sqrt(pow(x, 2) + pow(y, 2))
+  local new_x = x / v
+  local new_y = y / v
+  return [new_x, new_y]
+end
+
+// returns a random number (float/with decimals) within the range [low, high)
+randRange = function(low, high)
+  return (high - low) * random.next() + low
+end
+
+// removes objects from a given list that have a property "delete = true"
+// useful for deleting enemies, bullets etc. run at the end of each frame
+// then simply set object.delete = true to ensure it's deletion
+removeDeleted = function(object_list)
+  for i = object_list.length - 1 to 0 by -1
+    if object_list[i].delete then 
+      object_list.removeAt(i) 
+    end
+  end
+end
+
+// find the diagonal length of a vector
+vectorLength = function(x, y)
+  return sqrt(pow(x, 2) + pow(y, 2))
+end
+
+// takes a (direction or movement) vector in the form of a list [x, y]
+// returns an angle in degrees
+vectorToAngle = function(vec)
+  return atan2d(vec[1], vec[0])
+end
+
+// makes the object wrap around the screen when moving off the edge
+// note: object must have x and y fields (variables)
+wrap = function(obj, leeway = 0)
+  if obj.x + leeway < -screen.width/2 then
+    obj.x = screen.width/2 + leeway
+  elsif obj.x - leeway > screen.width/2 then
+    obj.x = -screen.width/2 - leeway
+  end 
+  if obj.y + leeway < -screen.height/2 then
+    obj.y = screen.height/2 + leeway
+  elsif obj.y - leeway > screen.height/2 then
+    obj.y = -screen.height/2 - leeway
+  end 
+end
+
+// calculate the map grid position of a specific x value in the world
+xpos_to_grid = function(x, map_columns, map_draw_width)
+  local column_draw_width = map_draw_width / map_columns
+  return floor((x + map_draw_width / 2) / column_draw_width)
+end
+
+// calculate the map grid position of a specific y value in the world
+ypos_to_grid = function(y, map_rows, map_draw_height)
+  local row_draw_height = map_draw_height / map_rows
+  return floor((y + map_draw_height / 2) / row_draw_height)
+end
+end()
+
+
+
+function()
+Joystick = class
+  
+  constructor = function(x, y, d1, d2, color1, color2)
+    this.x1 = x
+    this.y1 = y
+    
+    this.x2 = x
+    this.y2 = y
+    
+    this.d1 = d1
+    this.d2 = d2
+    this.d3 = 4*d2
+    
+    this.color1 = color1
+    this.color2 = color2
+    
+    this.xValue = 0
+    this.yValue = 0
+    
+    this.active = false
+  end
+  
+  update = function()
+    found = false
+    for t in touch.touches
+      dist = distance(t.x, t.y, x1, y1)
+      if dist <= d3 then 
+        found = true
+        if dist < d1/2 then
+          active = true
+          x2 = t.x
+          y2 = t.y
+          break
+        end
+        if active then
+          x2 = cosd(atan2d(t.y - y1, t.x - x1))*(d1/2) + x1
+          y2 = sind(atan2d(t.y - y1, t.x - x1))*(d1/2) + y1
+          break
+        end
+      end
+    end
+    if not found then
+      x2 = x1
+      y2 = y1
+      active = false
+    end
+  
+    xValue = (x2 - x1)/(d1/2)*100
+    yValue = (y2 - y1)/(d1/2)*100
+  end
+  
+  draw = function()
+    screen.drawRound(x1, y1, d1, d1, color1)
+    screen.fillRound(x2, y2, d2, d2, color2)
+  end
+  
+  distance = function(x_1, y_1, x_2, y_2)
+    local dx = x_2 - x_1
+    local dy = y_2 - y_1
+    local distance = sqrt(pow(dx, 2) + pow(dy, 2))
+    return distance
+  end
+end
+end()
+
+
+
+function()
+shuffle = function(lista)
+  lista1 = []
+  for i=0 to lista.length-1
+    lista1[i] = lista[i]
+  end
+  for i1=0 to lista1.length-1
+    i2 = random.nextInt(lista.length)
+    tmp = lista1[i1]
+    lista1[i1] = lista1[i2]
+    lista1[i2] = tmp
+  end
+  return lista1
+end
+
+sort = function(lista)
+  lista1=[]
+  for i=0 to lista.length-1
+    lista1[i] = lista[i]
+  end
+  lista1.sortList(function(a, b)
+    if a.y > b.y or (a.y == b.y and a.x > b.x) then
+      return -1
+    elsif a.x == b.x and a.y == b.y then
+      return 0
+    else
+      return 1
+    end
+  end)
+  return lista1
+end
+end()
+
+
+
+function()
+  init = function()
+    
+    hp_p1 = 3
+    hp_p2 = 3
+    
+    tick = 0
+    scena = 0
+    
+    // Costanti globali
+    W = screen.width
+    H = screen.height
+    
+    cambia_scena(0)
+  end
+  
+  update = function()
+    if scena == 0 then
+      update_menu()
+    elsif scena == 1 then
+      update_game()
+    elsif scena == 2 then
+      update_lose()
+    elsif scena == 3 then
+      update_spotted()
+    end
+    
+    tick += 1
+  end
+  
+  draw = function()
+     if scena == 0 then
+      draw_menu()
+    elsif scena == 1 then
+      draw_game()
+    elsif scena == 2 then
+      draw_lose()
+    elsif scena == 3 then
+      draw_spotted()
+    end
+  end
+  
+  cambia_scena = function(n)
+    
+    if n<0 or n>3 then return end
+    
+    tick = 0
+    scena = n
+    if scena == 0 then
+      init_menu()
+    elsif scena == 1 then
+      init_game()
+    elsif scena == 2 then
+      init_lose()
+    elsif scena == 3 then
+      init_spotted()
+    end
+  end
+end()
+
+
+
+function()
+Player = class
+  constructor = function(sprite)
+    random_place = random_empty()
+    this.x = random_place.x
+    this.y = random_place.y
+    this.sprite = sprite
+    this.goal = 0
+    this.immunity = 0 
+  end
+  
+  // Aggiorna il Player
+  update = function(joystick)
+    move(joystick.xValue, joystick.yValue)
+    if this.immunity > 0 then
+      this.immunity -=1
+    end
+  end
+  
+  // Prova a muovere di dx,dy
+  move = function(dx,dy)
+    x += dx/100
+    y += dy/100
+    local passi = 0
+    while collide(x,y) 
+      x -= dx/1000
+      y -= dy/1000
+      passi += 1
+    end
+    for i=0 to passi
+      if not collide(x, y+dy/1000) then
+        y += dy/1000
+      elsif not collide(x+dx/1000, y) then
+        x += dx/1000
+      end
+    end
+  end
+  
+  // Controlla la collisione con la mappa alle coordinate x,y
+  collide = function(x,y)
+    pixel_x = floor()
+    solid = CTX.getImageData(x+CANVAS.width/2,-y+CANVAS.height/2,1,1).data[3]
+    return solid > 0
+  end
+  
+  // Aggiorna i movimenti di un NPC
+  update_npc = function()
+    if not this.goal then return end
+    
+    dist = distance(x,y, goal.x,goal.y)
+    if not random.nextInt(500) or dist < 10 then
+      new_goal()
+      return
+    end
+    
+    if dist > goal.speed then dist = goal.speed end
+    angle = floor(atan2d(goal.y - y, goal.x - x))
+    local old_x = x
+    local old_y = y
+    move(cos(angle)*dist, sin(angle)*dist)
+    if distance(old_x,old_y, x,y) < 1 then
+      new_goal()
+    end
+    
+    if this.immunity > 0 then
+      this.immunity -=1
+    end
+  end
+  
+  // Sceglie un punto a caso e una velocità
+  new_goal = function()
+    this.goal = object
+      x = random.nextInt(CANVAS.width)-CANVAS.width/2
+      y = random.nextInt(CANVAS.height)-CANVAS.height/2
+      
+      speed = 100 - random.nextInt(20) * choose([-1,1])
+    end
+  end
+  
+  // Trova un posto libero
+  random_empty = function()
+    while true
+      random_place = object
+        x = random.nextInt(CANVAS.width)-CANVAS.width/2
+        y = random.nextInt(CANVAS.height)-CANVAS.height/2
+      end
+      if not collide(random_place.x, random_place.y) then
+        return random_place
+      end
+    end
+  end
+end
+end()
+
+
+
+function()
+init_menu = function()
+  print("Entro in scena 0 Menu")
+end
+
+update_menu = function()
+  if tick >= 300 or touch.press then
+    cambia_scena(1)
+  end
+  
+  if tick == 30 then
+    audio.playSound("hit", 1, 1, 1, 0)
+  end
+  if tick == 60 then
+    audio.playSound("hit", 1, 1, 1, 0)
+  end
+  if tick == 90 then
+    audio.playSound("hit", 1, 1, 1, 0)
+  end
+  if tick == 120 then
+    audio.playSound("hit", 1, 1, 1, 0)
+  end
+  if tick == 150 then
+   audio.playSound("light_on", 1, 1, 1, 0)
+  end
+  
+end
+
+draw_menu = function()
+  
+  screen.clear("rgb(134,12,22)")
+  screen.fillRound(0, 0, 200, 200, "rgb(255,5,40)")
+  
+  if tick > 30 then
+    screen.drawSprite("s", 0, 0, 200, 200)
+  end
+  if tick > 60 then
+    screen.drawSprite("p", 0, 0, 200, 200)
+  end
+  if tick > 90 then
+    screen.drawSprite("o_off", 0, 0, 200, 200)
+  end
+  if tick > 150 then
+    screen.setAlpha(getFlashValue(0.9))
+    screen.drawSprite("o_on", 0, 0, 200, 200)
+    screen.drawSprite("mgwcmx", -60, 15, 200, 200)
+    screen.setAlpha(1)
+  end
+  if tick > 120 then
+    screen.drawSprite("t", 0, 0, 200, 200)
+  end
+  
+end
+end()
+
+
+
+function()
+init_game = function()
+  print("Entro in scena 1 Game")
+  
+  W = screen.width
+  H = screen.height
+  CANVAS = sprites['mappa'].frames[0].canvas
+  CTX = CANVAS.getContext('2d')
+  SKINS = ["😀","😄","😁","😆","😅","😂","🤣","🥲","🥹","😊️"]
+  
+  j1 = new Joystick(-W/2+30, 0, 30, 15, '#fff', '#fff')
+  j2 = new Joystick(W/2-30, 0, 30, 15, '#fff', '#fff')
+
+  p1 = new Player(choose(SKINS))
+  p2 = new Player(choose(SKINS))
+  
+  npcs = []
+  for i=0 to 100
+    npcs += new Player(choose(SKINS))
+  end
+  for npc in npcs
+    npc.new_goal()
+  end
+end
+
+update_game = function()
+  W = screen.width
+  H = screen.height
+  
+  if hp_p1 <= 0 or hp_p2 <= 0 then
+    cambia_scena(2)
+    hp_p1 = 3
+    hp_p2 = 3
+  end
+  
+  // Giocatore 1
+  j1.update()
+  p1.update(j1)
+  last_click_p1 = click_p1
+  click_p1 = controlla_click(-W/4,0, W/2,H, p1.x,p1.y, p2, j1, [p1])
+  if click_p1 and click_p1 != last_click_p1 then
+    print(if click_p1 == p2 then "Win1" else "Lose1" end)
+    if click_p1 == p2 then
+      hp_p2 -= 1
+      cambia_scena(3)
+      p2.immunity = 100
+    else
+      hp_p1 -= 1
+      p1.immunity = 100
+    end
+    print("hp_p1: " + hp_p1)
+  end
+  
+  // Giocatore 2
+  j2.update()
+  p2.update(j2)
+  last_click_p2 = click_p2
+  click_p2 = controlla_click(W/4,0, W/2,H, p2.x,p2.y, p1, j2, [p2])
+  if click_p2 and click_p2 != last_click_p2 then
+    print(if click_p2 == p2 then "Win2" else "Lose2" end)
+    if click_p2 == p1 then
+      hp_p1 -= 1
+      cambia_scena(3)
+      p1.immuniy = 100
+    else
+      hp_p2 -= 1
+      p2.immunity = 100
+    end
+    print("hp_p2: " + hp_p2)
+  end
+  
+  // NPC
+  for npc in npcs
+    npc.update_npc()
+  end
+end
+
+draw_game = function()
+  screen.clear("rgb(118,118,118)")
+  
+  // PLAYER 1
+  disegna_mappa(-W/4,0, W/2,H, p1.x,p1.y)
+  j1.draw()
+  
+  
+  // PLAYER 2
+  disegna_mappa(W/4,0, W/2,H, p2.x,p2.y)
+  j2.draw()
+  
+  screen.fillRect(0, 0, 3, 200, "#000")
+  
+  screen.setDrawRotation(90)
+  if hp_p2 >= 3 then
+    screen.drawSprite("heart", 40, 90, 10, 10)
+  end
+  if hp_p2 >= 2 then
+    screen.drawSprite("heart", 25, 90, 10, 10)
+  end
+  if hp_p2 >= 1 then
+    screen.drawSprite("heart", 10, 90, 10, 10)
+  end
+  
+  screen.setDrawRotation(-90)
+  if hp_p1 >= 3 then
+    screen.drawSprite("heart", -40, 90, 10, 10)
+  end
+  if hp_p1 >= 2 then
+    screen.drawSprite("heart", -25, 90, 10, 10)
+  end
+  if hp_p1 >= 1 then
+    screen.drawSprite("heart", -10, 90, 10, 10)
+  end
+  
+  screen.setDrawRotation(0)
+  
+end
+  
+disegna_mappa = function(x,y, w,h, cx,cy)
+  mappa = new Image(w,h,true)
+  mappa.drawSprite("mappa",-cx, -cy, 1920, 1920)
+  
+  people = sort([p1,p2].concat(npcs))
+  
+  mappa.setFont()
+  for p in people
+    mappa.drawText(p.sprite, p.x-cx, p.y-cy, 10)
+    if p.immunity then
+      mappa.setAlpha(0.5)
+      mappa.fillRound(p.x-cx+1, p.y-cy+1, 15,15, '#F00')
+      mappa.setAlpha(1)
+    end
+  end
+  
+  screen.drawImage(mappa, x,y, w,h)
+end
+
+controlla_click = function(x,y, w,h, cx,cy, searched, j, blacklist)
+  clicked_p = 0
+  if touch.touching then
+    for t in touch.touches
+      // Joystick area
+      if distance(t.x,t.y, j.x1, j.y1) < j.d2 or j.active then
+        continue  
+      end
+      // Opponent area
+      if t.x < x-w/2 or t.x > x+w/2 or t.y < y-h/2 or t.y > y+h/2 then
+        continue
+      end
+      
+      clicked = false
+      found = false
+      for p in [p1,p2].concat(npcs)
+        if blacklist.contains(p) then continue end
+        // P clicked
+        size = 10
+        if t.x > x-cx+p.x-size and
+           t.x < x-cx+p.x+size and
+           t.y > y-cy+p.y-size and
+           t.y < y-cy+p.y+size then
+          clicked = true
+          if p == searched then
+            found = true
+            clicked_p = p
+          end
+          if not found then
+            clicked_p = p
+          end
+        end
+      end
+      
+      return clicked_p
+    end
+  end
+end
+end()
+
+
+
+function()
+init_lose = function()
+  screen.fillRect(0, 0, W, H,"rgba(0,0,0,0.5)")
+  
+  screen.setDrawRotation(-90)
+  screen.drawText(if hp_p1 <= 0 then "LOSE" else "WIN" end, -75, 0, 20, "#FFF")
+  screen.setDrawRotation(90)
+  screen.drawText(if hp_p2 <= 0 then "LOSE" else "WIN" end, 75, 0, 20, "#FFF")
+  
+  screen.setDrawRotation(0)
+  screen.drawText("TAP to RESTART", 0, 0, 10, "FFF")
+end
+
+update_lose = function()
+  
+  if touch.press then
+    cambia_scena(0)
+  end
+  
+end
+
+draw_lose = function()
+end
+end()
+
+
+
+function()
+init_spotted = function()
+  draw_game()
+  
+  screen.fillRect(0, 0, W, H,"rgba(0,0,0,0.5)")
+  
+  screen.setDrawRotation(-90)
+  screen.drawText("ROUND 2!", -75, 0, 20, "#FFF")
+  screen.setDrawRotation(90)
+  screen.drawText("ROUND 2!", 75, 0, 20, "#FFF")
+  
+end
+
+update_spotted = function()
+  if tick > 120 then
+    cambia_scena(1)
+  end
+  
+end
+
+draw_spotted = function()
+  
+end
+end()
+
+
+</script></html>
